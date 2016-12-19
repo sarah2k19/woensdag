@@ -1,2 +1,6 @@
-Django==1.10.3
+dj-database-url==0.4.1
+Django==1.10.4
 gunicorn==19.6.0
+simplejson==3.10.0
+twitter==1.17.1
+whitenoise==3.2.2
