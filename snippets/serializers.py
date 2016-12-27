@@ -5,7 +5,7 @@ from blog.models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Post
@@ -21,7 +21,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 # Hyperlinking the API, django-rest-framework tutorial part 5
 class PostSerializer(serializers.HyperlinkedModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username')
+    owner = serializers.ReadOnlyField(owner='author.username')
 
     class Meta:
         model = Post
