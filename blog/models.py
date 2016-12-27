@@ -10,7 +10,7 @@ LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('auth.User', related_name='snippets', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField(default ='', blank=True)
     created_date = models.DateTimeField(
@@ -24,7 +24,7 @@ class Post(models.Model):
     linenos = models.BooleanField(default=False)
     language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
     style = models.CharField(choices=STYLE_CHOICES, default='friendly', max_length=100)
-    owner = models.ForeignKey('auth.User', related_name='snippets', on_delete=models.CASCADE, null=True, blank=True)
+    owner = models.ForeignKey('auth.User', null=True, blank=True)
 
 
     def publish(self):
