@@ -21,7 +21,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 # Hyperlinking the API, django-rest-framework tutorial part 5
 class PostSerializer(serializers.HyperlinkedModelSerializer):
-    owner = serializers.ReadOnlyField(owner='author.username')
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Post
