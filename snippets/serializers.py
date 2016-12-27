@@ -5,7 +5,7 @@ from blog.models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='author.username')
+    author = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Post
