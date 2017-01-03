@@ -16,7 +16,7 @@ p {
 /* originele css */
 h1 {
     color: #ffffff;
-    font-family: "Lucida Sans Unicode New", sans-serif;
+    font-family: "Lemonada", sans-serif;
     text-align: center;
 }
 
@@ -37,13 +37,10 @@ h1 {
 }
 
 h2, h3, h4 {
-    color: #FCA205;
+    color: #D3D3D3;
     font-family: 'Arial', cursive;
 }
 
-h2 a{
-    color: white;
-}
 
 h2 a:hover {
     color: grey;
