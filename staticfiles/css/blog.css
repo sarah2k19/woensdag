@@ -37,13 +37,13 @@ h1 {
 }
 
 h2, h3, h4 {
-    color: #D3D3D3;
+    color: #000000;
     font-family: 'Arial', cursive;
 }
 
 
 h2 a:hover {
-    color: grey;
+    color: black;
 }
 
 .boom {
