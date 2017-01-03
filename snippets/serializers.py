@@ -12,12 +12,12 @@ class PostSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'text', 'published_date', 'created_date', 'code', 'linenos', 'language', 'style', 'author')
 
 
-class UserSerializer(serializers.ModelSerializer):
-    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Post.objects.all())
+#class UserSerializer(serializers.ModelSerializer):
+#    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Post.objects.all())
 
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'snippets')
+#    class Meta:
+#        model = User
+#        fields = ('id', 'username', 'snippets')
 
 # Hyperlinking the API, django-rest-framework tutorial part 5
 class PostSerializer(serializers.HyperlinkedModelSerializer):
@@ -29,9 +29,9 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
                   'title', 'code', 'linenos', 'language', 'style')
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    snippets = serializers.HyperlinkedRelatedField(many=True, view_name='snippet-detail', read_only=True)
+#class UserSerializer(serializers.HyperlinkedModelSerializer):
+#    snippets = serializers.HyperlinkedRelatedField(many=True, view_name='snippet-detail', read_only=True)
 
-    class Meta:
-        model = User
-        fields = ('url', 'id', 'username', 'snippets')
+#    class Meta:
+#        model = User
+#        fields = ('url', 'id', 'username', 'snippets')

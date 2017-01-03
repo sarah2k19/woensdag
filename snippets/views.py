@@ -2,7 +2,7 @@ from blog.models import Post
 from snippets.serializers import PostSerializer
 from rest_framework import generics
 from django.contrib.auth.models import User
-from snippets.serializers import UserSerializer
+#from snippets.serializers import UserSerializer
 from rest_framework import permissions
 from snippets.permissions import IsOwnerOrReadOnly
 from rest_framework.decorators import api_view
@@ -16,8 +16,7 @@ from rest_framework.decorators import detail_route
 
 class PostViewSet(viewsets.ModelViewSet):
     """
-    This viewset automatically provides `list`, `create`, `retrieve`,
-    `update` and `destroy` actions.
+    This viewset automatically provides `list`, `create` and `retrieve` actions.
     """
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -28,12 +27,12 @@ class PostViewSet(viewsets.ModelViewSet):
         serializer.save(author=self.request.user)
 
 
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    This viewset automatically provides `list` and `detail` actions.
-    """
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+#class UserViewSet(viewsets.ReadOnlyModelViewSet):
+#    """
+#    This viewset automatically provides `list` and `detail` actions.
+#    """
+#    queryset = User.objects.all()
+#    serializer_class = UserSerializer
 
 
 @api_view(['GET'])
