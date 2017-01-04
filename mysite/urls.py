@@ -11,7 +11,7 @@ Class-based views
     2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
 Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+    2. Add a URL to urlpatterns:  url(r'^todoapp/', include('todoapp.urls'))
 """
 from django.conf.urls import include, url
 from django.contrib import admin
@@ -30,7 +30,7 @@ schema_view = get_schema_view(title='Pastebin API')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('blog.urls')),
+    url(r'', include('todoapp.urls')),
     url(r'^schema/$', schema_view),
     url(r'^api/', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),

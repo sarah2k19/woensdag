@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from snippets.models import LANGUAGE_CHOICES, STYLE_CHOICES
 from django.contrib.auth.models import User
-from blog.models import Post
+from todoapp.models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):

@@ -1,4 +1,4 @@
-from blog.models import Post
+from todoapp.models import Post
 from snippets.serializers import PostSerializer
 from rest_framework import generics
 from django.contrib.auth.models import User
