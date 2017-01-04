@@ -1,10 +1,10 @@
 from todoapp.models import Post
-from snippets.serializers import PostSerializer
+from items.serializers import PostSerializer
 from rest_framework import generics
 from django.contrib.auth.models import User
-#from snippets.serializers import UserSerializer
+#from items.serializers import UserSerializer
 from rest_framework import permissions
-from snippets.permissions import IsOwnerOrReadOnly
+from items.permissions import IsOwnerOrReadOnly
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
@@ -39,5 +39,5 @@ class PostViewSet(viewsets.ModelViewSet):
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
-        'snippets': reverse('snippet-list', request=request, format=format)
+        'items': reverse('item-list', request=request, format=format)
     })

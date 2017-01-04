@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todoapp',
     'rest_framework',
-    'snippets.apps.PostConfig',
+    'items.apps.PostConfig',
 ]
 
 MIDDLEWARE = [

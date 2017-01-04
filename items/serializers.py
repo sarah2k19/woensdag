@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from snippets.models import LANGUAGE_CHOICES, STYLE_CHOICES
+from items.models import LANGUAGE_CHOICES, STYLE_CHOICES
 from django.contrib.auth.models import User
 from todoapp.models import Post
 
@@ -13,11 +13,11 @@ class PostSerializer(serializers.ModelSerializer):
 
 
 #class UserSerializer(serializers.ModelSerializer):
-#    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Post.objects.all())
+#    items = serializers.PrimaryKeyRelatedField(many=True, queryset=Post.objects.all())
 
 #    class Meta:
 #        model = User
-#        fields = ('id', 'username', 'snippets')
+#        fields = ('id', 'username', 'items')
 
 # Hyperlinking the API, django-rest-framework tutorial part 5
 class PostSerializer(serializers.HyperlinkedModelSerializer):
@@ -30,8 +30,8 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
 
 
 #class UserSerializer(serializers.HyperlinkedModelSerializer):
-#    snippets = serializers.HyperlinkedRelatedField(many=True, view_name='snippet-detail', read_only=True)
+#    items = serializers.HyperlinkedRelatedField(many=True, view_name='item-detail', read_only=True)
 
 #    class Meta:
 #        model = User
-#        fields = ('url', 'id', 'username', 'snippets')
+#        fields = ('url', 'id', 'username', 'items')
